@@ -1,5 +1,5 @@
---temp-output:c:\Users\epicodus\documents\visual studio 2015\Projects\mapbox\src\mapbox\obj\Debug\netcoreapp1.0\
---out:c:\Users\epicodus\documents\visual studio 2015\Projects\mapbox\src\mapbox\bin\Debug\netcoreapp1.0\mapbox.dll
+--temp-output:C:\Users\epicodus\Desktop\mapbox-practice-c-\src\mapbox\obj\Debug\netcoreapp1.0\
+--out:C:\Users\epicodus\Desktop\mapbox-practice-c-\src\mapbox\bin\Debug\netcoreapp1.0\mapbox.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -196,7 +196,7 @@
 --reference:C:\Users\epicodus\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\epicodus\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\epicodus\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
---resource:"c:\Users\epicodus\documents\visual studio 2015\Projects\mapbox\src\mapbox\obj\Debug\netcoreapp1.0\mapboxdotnet-compile.deps.json",mapbox.deps.json
-c:\Users\epicodus\documents\visual studio 2015\Projects\mapbox\src\mapbox\Program.cs
-c:\Users\epicodus\documents\visual studio 2015\Projects\mapbox\src\mapbox\Startup.cs
-c:\Users\epicodus\documents\visual studio 2015\Projects\mapbox\src\mapbox\Controllers\HomeController.cs
+--resource:"C:\Users\epicodus\Desktop\mapbox-practice-c-\src\mapbox\obj\Debug\netcoreapp1.0\mapboxdotnet-compile.deps.json",mapbox.deps.json
+C:\Users\epicodus\Desktop\mapbox-practice-c-\src\mapbox\Program.cs
+C:\Users\epicodus\Desktop\mapbox-practice-c-\src\mapbox\Startup.cs
+C:\Users\epicodus\Desktop\mapbox-practice-c-\src\mapbox\Controllers\HomeController.cs
