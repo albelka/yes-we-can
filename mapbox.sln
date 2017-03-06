@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "mapbox", "src\mapbox\mapbox.xproj", "{38E98D81-B537-49D3-80D8-E3AF4D13034C}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "yes_we_can", "src\mapbox\yes_we_can.xproj", "{38E98D81-B537-49D3-80D8-E3AF4D13034C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
