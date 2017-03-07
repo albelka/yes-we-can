@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Map";
 }
 
 <br /><br />
@@ -107,6 +107,7 @@
        var runLayer = omnivore.kml('https://rawgit.com/albelka/grocery-data/gh-pages/grocery.kmz')
        .on('ready', function () {
            console.log(runLayer.getBounds());
+
            map.fitBounds(runLayer.getBounds());
        })
        .addTo(map);
@@ -114,6 +115,10 @@
        var iconLayer = L.mapbox.featureLayer()
       .setGeoJSON(geojson)
      .addTo(map);
+
+       var groceryLayer = L.mapbox.tileLayer('Grocery_Stores-3xni22')
+         .addTo(map);
+
 
       var myLayer = L.mapbox.featureLayer()
       .loadURL('https://raw.githubusercontent.com/albelka/garbage-data/gh-pages/garbage2.geojson')
