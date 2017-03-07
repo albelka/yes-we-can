@@ -98,11 +98,18 @@
        var map = L.mapbox.map('map', 'mapbox.outdoors')
            .setView([45.54, -122.62], 11);
 
-       var layer = L.mapbox.tileLayer('mapbox.outdoors-copy');
-       layer.on('ready', function () {
-           layer.getJSON();
-           layer.addTo(map);
-       });
+       //var layer = L.mapbox.tileLayer('mapbox.outdoors-copy');
+       //layer.on('ready', function () {
+       //    console.log(layer.getJSON());
+       //    layer.addTo(map);
+       //});
+
+       var runLayer = omnivore.kml('https://rawgit.com/albelka/grocery-data/gh-pages/grocery.kmz')
+       .on('ready', function () {
+           console.log(runLayer.getBounds());
+           map.fitBounds(runLayer.getBounds());
+       })
+       .addTo(map);
 
        var iconLayer = L.mapbox.featureLayer()
       .setGeoJSON(geojson)
