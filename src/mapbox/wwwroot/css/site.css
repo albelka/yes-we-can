@@ -40,3 +40,42 @@ textarea {
 #map {
     height: 500px;
 }
+
+img#logo {
+    height: 40px;
+    margin-top: 0;
+
+}
+.navbar {
+    background-color: darkolivegreen; 
+    color: black;
+}
+.navbar-nav {
+    color: black;
+}
+
+body {
+    
+    background-color: lightgrey;
+}
+
+.splash {
+    background-image: url("../images/can.png");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 800px;
+    background-position: center;
+    background-color: black;
+  
+    height: 1000px;
+
+}
+
+.black-bg {
+    background-color: black;
+}
+
+.navbar-text {
+    padding-left: 200px;
+    font-size: 30px;
+}

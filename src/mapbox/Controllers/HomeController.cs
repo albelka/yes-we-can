@@ -27,6 +27,11 @@ namespace mapbox.Controllers
             return View();
         }
 
+        public IActionResult Map ()
+        {
+            return View();
+        }
+
         public IActionResult Error()
         {
             return View();

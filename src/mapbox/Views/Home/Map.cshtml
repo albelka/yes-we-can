@@ -1,0 +1,121 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<br /><br />
+<h4>Click on a polygon to find the garbage night for that area.</h4>
+
+<div id='map'></div>
+<script>
+       L.mapbox.accessToken = 'pk.eyJ1IjoiYWxiZWxrYSIsImEiOiJjaXpwc2VlOWwwMHNtMzJvNDZreDMxMTgwIn0.GkWVE5JQRakQyQSoJFKp3A';
+       var geojson = [
+  {
+      type: 'Feature',
+      geometry: {
+          type: 'Point',
+          coordinates: [ -122.675665, 45.598891]
+      },
+      properties: {
+          'marker-color': '#ff0000',
+          'marker-size': 'large',
+          'marker-symbol': 'city',
+          'title': "BottleDrop Redemption Center"
+
+      }
+  },
+   {
+       type: 'Feature',
+       geometry: {
+           type: 'Point',
+           coordinates: [-122.719610, 45.549385]
+       },
+       properties: {
+           'marker-color': '#ff0000',
+           'marker-size': 'large',
+           'marker-symbol': 'city',
+           'title': "BottleDrop Redemption Center"
+
+       }
+   },
+    {
+        type: 'Feature',
+        geometry: {
+            type: 'Point',
+            coordinates: [-122.534903, 45.528534]
+        },
+        properties: {
+            'marker-color': '#ff0000',
+            'marker-size': 'large',
+            'marker-symbol': 'city',
+            'title': "BottleDrop Redemption Center"
+
+        }
+    },
+     {
+         type: 'Feature',
+         geometry: {
+             type: 'Point',
+             coordinates: [-122.424353, 45.538153]
+         },
+         properties: {
+             'marker-color': '#ff0000',
+             'marker-size': 'large',
+             'marker-symbol': 'city',
+             'title': "BottleDrop Redemption Center"
+
+         }
+     },
+  {
+      type: 'Feature',
+      geometry: {
+          type: 'Point',
+          coordinates: [-122.601508, 45.451034]
+      },
+      properties: {
+          'marker-color': '#ff0000',
+          'marker-size': 'large',
+          'marker-symbol': 'city',
+          'title': "BottleDrop Redemption Center"
+
+      }
+  },
+  {
+      type: 'Feature',
+      geometry: {
+          type: 'Point',
+          coordinates: [-122.418170, 45.498424]
+      },
+      properties: {
+          'marker-color': '#ff0000',
+          'marker-size': 'large',
+          'marker-symbol': 'city',
+          'title': "BottleDrop Redemption Center"
+
+      }
+  }
+       ];
+
+       var map = L.mapbox.map('map', 'mapbox.outdoors')
+           .setView([45.54, -122.62], 11);
+
+       var layer = L.mapbox.tileLayer('mapbox.outdoors-copy');
+       layer.on('ready', function () {
+           layer.getJSON();
+           layer.addTo(map);
+       });
+
+       var iconLayer = L.mapbox.featureLayer()
+      .setGeoJSON(geojson)
+     .addTo(map);
+
+      var myLayer = L.mapbox.featureLayer()
+      .loadURL('https://raw.githubusercontent.com/albelka/garbage-data/gh-pages/garbage2.geojson')
+      .on('ready', function () {
+          myLayer.eachLayer(function (layer) {
+              layer.bindPopup(layer.feature.properties.COLL_DAY_N);
+          });
+      })
+      .setGeoJSON(geojson)
+     .addTo(map);
+</script>
+
