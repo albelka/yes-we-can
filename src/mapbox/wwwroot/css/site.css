@@ -82,10 +82,10 @@ body {
 
 div.card {
     margin: 5px;
-    background-color: lightgoldenrodyellow;
+    background-color: #262626;
+    color: white;
     border: hidden;
     padding: 5px;
-    border-radius: 5px;
      box-shadow: 5px 5px 2px #888888;
      width: 50%;
     

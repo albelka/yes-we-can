@@ -14,10 +14,9 @@
                 $.ajax({
                     type: 'POST',
                     data: $(this).serialize(),
-                    dataType: 'json',
-                    url: '@Url.Action("NewMessage")',
+                    dataType: 'html',
+                    url: '@Url.Action("newMessage")',
                     success: function (result) {
-                        var resultMessage = "<p>New message:</p> <p>Please get my cans at:</p>" + result.locaton +".<p><br/> at:</p>" + result.when + "<p><br/. Comments: </p>" + result.comment
                         console.log(result);
                         $('#addMessage').html(result);
                     }
@@ -55,7 +54,7 @@
 
 
 <div class="card panel-success">
-    <img class="card-img-top" src="~/images/nice-lady.png" alt="Card image cap">
+    <img class="card-img-top" src="~/images/kind-hearted-woman.jpg" alt="Card image cap">
     <div class="card-block">
         <h4 class="card-title">Where: @message.Locaton</h4>
         <p class="card-text">When: @message.When</p>

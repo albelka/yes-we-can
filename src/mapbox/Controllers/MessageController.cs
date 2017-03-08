@@ -30,8 +30,8 @@ namespace mapbox.Controllers
             Debug.WriteLine(message);
             db.Messages.Add(message);
             db.SaveChanges();
-            Debug.WriteLine("HERE");
-            return View("Index");
+            Debug.WriteLine("HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+            return View("Index", db.Messages.ToList());
         }
     }
 }

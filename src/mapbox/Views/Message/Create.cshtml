@@ -14,7 +14,7 @@
                     type: 'POST',
                     data: $(this).serialize(),
                     dataType: 'html',
-                    url: '@Url.Action("NewMessage")',
+                    url: '@Url.Action("newMessage")',
                     success: function (result) {
                        console.log("YEP")
                         $('#addMessage').html(result);
@@ -29,7 +29,7 @@
 
 <h3>Leave a message to have your cans picked up:</h3>
 
-<form asp-action="NewMessage" class="new-message">
+<form asp-action="newMessage" class="new-message">
     <div class="form-group">
         <label asp-for="Locaton">Street Address:</label>
         <input type="text" asp-for="Locaton" class="form-control" />
