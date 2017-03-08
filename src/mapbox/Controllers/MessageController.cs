@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using mapbox.Models;
 using System.Diagnostics;
+using Microsoft.EntityFrameworkCore;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -28,8 +29,19 @@ namespace mapbox.Controllers
         [HttpPost]
         public IActionResult newMessage(Message message)
         {
-            Debug.WriteLine(message);
             db.Messages.Add(message);
+            db.SaveChanges();
+            return View("Index", db.Messages.ToList());
+        }
+        public IActionResult Edit(int id)
+        {
+            Message thisMessage = db.Messages.FirstOrDefault(j => j.Id == id);
+            return View(thisMessage);
+        }
+        [HttpPost]
+        public IActionResult Edit(Message message)
+        {
+            db.Entry(message).State = EntityState.Modified;
             db.SaveChanges();
             return View("Index", db.Messages.ToList());
         }
@@ -42,7 +54,7 @@ namespace mapbox.Controllers
         [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirmed(int id)
         {
-            Message thisMessage = db.Messages.FirstOrDefault(j => j.Id == id);
+            Message thisMessage = db.Messages.FirstOrDefault(m => m.Id == id);
             db.Messages.Remove(thisMessage);
             db.SaveChanges();
             return View("Index", db.Messages.ToList());

@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Edit";
+}
+
+@model mapbox.Models.Message
+<br />
+<br />
+
+    <div class="card">
+        <form asp-action="Edit" asp-controller="Message" method="post">
+            <input for="message" type="hidden" value="@Model.Id" name="id" />
+            <div class="form-group">
+                <label for="locaton">Change location:</label>
+                <input type="text" id="locaton" name="locaton" placeholder="@Model.Locaton" value="@Model.Locaton" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label for="when">Change time:</label>
+                <input type="text" id="when" name="when" placeholder="@Model.When" value="@Model.When" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="comment">Change comment:</label>
+                <input type="text" id="comment" name="comment" placeholder="@Model.Comment" value="@Model.Comment" class="form-control" />
+            </div>
+            <br />
+
+            <input type="submit" class="btn btn-warning" value="Save Edit" />
+        </form>
+    </div>

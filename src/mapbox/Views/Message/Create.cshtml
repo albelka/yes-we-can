@@ -29,21 +29,23 @@
 
 <h3>Leave a message to have your cans picked up:</h3>
 
-<form asp-action="newMessage" class="new-message">
-    <div class="form-group">
-        <label asp-for="Locaton">Street Address:</label>
-        <input type="text" asp-for="Locaton" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="When">Date:</label>
-        <input type="text" asp-for="When" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="Comment">Comments:</label>
-        <input type="text" asp-for="Comment" class="form-control" />
-    </div>
-    <button type="submit" class="btn btn-success">Send</button>
-</form>
+<div class="card">
+    <form asp-action="newMessage" class="new-message">
+        <div class="form-group">
+            <label asp-for="Locaton">Street Address:</label>
+            <input type="text" asp-for="Locaton" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="When">Date:</label>
+            <input type="text" asp-for="When" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Comment">Comments:</label>
+            <input type="text" asp-for="Comment" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-success">Send</button>
+    </form>
+</div>
 
 <div id="addMessage"></div>
 
