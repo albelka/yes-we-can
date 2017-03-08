@@ -24,13 +24,27 @@ namespace mapbox.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public IActionResult newMessage(Message message)
         {
             Debug.WriteLine(message);
             db.Messages.Add(message);
             db.SaveChanges();
-            Debug.WriteLine("HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+            return View("Index", db.Messages.ToList());
+        }
+
+        public IActionResult Delete(int id)
+        {
+            Message thisMessage = db.Messages.FirstOrDefault(j => j.Id == id);
+            return View(thisMessage);
+        }
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            Message thisMessage = db.Messages.FirstOrDefault(j => j.Id == id);
+            db.Messages.Remove(thisMessage);
+            db.SaveChanges();
             return View("Index", db.Messages.ToList());
         }
     }

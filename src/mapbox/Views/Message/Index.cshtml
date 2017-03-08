@@ -59,6 +59,7 @@
         <h4 class="card-title">Where: @message.Locaton</h4>
         <p class="card-text">When: @message.When</p>
         <p class="card-text">@message.Comment</p>
+        @Html.ActionLink("Delete", "Delete", new { id = message.Id })
     </div>
 </div>
 }

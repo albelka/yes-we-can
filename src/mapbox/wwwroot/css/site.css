@@ -91,6 +91,17 @@ div.card {
     
 }
 
+div.card {
+    margin: 5px;
+    background-color: #262626;
+    color: white;
+    border: hidden;
+    padding: 5px;
+     box-shadow: 5px 5px 2px #888888;
+     width: 50%;
+    
+}
+
 img.card-img-top {
     height: 50px;
 }
