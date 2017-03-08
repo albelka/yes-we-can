@@ -1,9 +1,8 @@
 ﻿@{
-    ViewData["Title"] = "Message";
+    ViewData["Title"] = "Contact";
 }
 
-@model IEnumerable<mapbox.Models.Message>
-@using mapbox.Models
+@model mapbox.Models.Message
 
 <script type="text/javascript">
         $(document).ready(function () {
@@ -14,11 +13,10 @@
                 $.ajax({
                     type: 'POST',
                     data: $(this).serialize(),
-                    dataType: 'json',
+                    dataType: 'html',
                     url: '@Url.Action("NewMessage")',
                     success: function (result) {
-                        var resultMessage = "<p>New message:</p> <p>Please get my cans at:</p>" + result.locaton +".<p><br/> at:</p>" + result.when + "<p><br/. Comments: </p>" + result.comment
-                        console.log(result);
+                       console.log("YEP")
                         $('#addMessage').html(result);
                     }
                 });
@@ -29,9 +27,9 @@
 
 <br />
 
-<h3><a asp-area="" asp-controller="Message" asp-action="Create" class="btn">Add a message...</a></h3>
+<h3>Leave a message to have your cans picked up:</h3>
 
-@*<form asp-action="NewMessage" class="new-message">
+<form asp-action="NewMessage" class="new-message">
     <div class="form-group">
         <label asp-for="Locaton">Street Address:</label>
         <input type="text" asp-for="Locaton" class="form-control" />
@@ -41,25 +39,12 @@
         <input type="text" asp-for="When" class="form-control" />
     </div>
     <div class="form-group">
-    <label asp-for="Comment">Comments:</label>
-    <input type="text" asp-for="Comment" class="form-control" />
+        <label asp-for="Comment">Comments:</label>
+        <input type="text" asp-for="Comment" class="form-control" />
     </div>
     <button type="submit" class="btn btn-success">Send</button>
 </form>
 
 <div id="addMessage"></div>
-<br />*@
 
-@foreach (var message in Model)
-{
-
-
-<div class="card panel-success">
-    <img class="card-img-top" src="~/images/nice-lady.png" alt="Card image cap">
-    <div class="card-block">
-        <h4 class="card-title">Where: @message.Locaton</h4>
-        <p class="card-text">When: @message.When</p>
-        <p class="card-text">@message.Comment</p>
-    </div>
-</div>
-}
+@*https://www.portlandmaps.com/arcgis/rest/services/Public/COP_OpenData/MapServer/generateKml*@

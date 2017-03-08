@@ -76,6 +76,21 @@ body {
 }
 
 .navbar-text {
-    padding-left: 200px;
+    
     font-size: 30px;
+}
+
+div.card {
+    margin: 5px;
+    background-color: lightgoldenrodyellow;
+    border: hidden;
+    padding: 5px;
+    border-radius: 5px;
+     box-shadow: 5px 5px 2px #888888;
+     width: 50%;
+    
+}
+
+img.card-img-top {
+    height: 50px;
 }
