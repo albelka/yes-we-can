@@ -116,7 +116,7 @@
       type: 'Feature',
       geometry: {
           type: 'Point',
-          coordinates: [-122.657505, 45.528465]
+          coordinates: [-122.684227, 45.511978]
       },
       properties: {
           'marker-color': '#ffff00',
@@ -168,31 +168,39 @@
        //    layer.addTo(map);
        //});
 
-       var runLayer = omnivore.kml('https://rawgit.com/albelka/grocery-data/gh-pages/grocery.kmz')
-       .on('ready', function () {
-           console.log(runLayer.getBounds());
+       //var runLayer = omnivore.kml('https://rawgit.com/albelka/grocery-data/gh-pages/grocery.kmz')
+       //.on('ready', function () {
+       //    console.log(runLayer.getBounds());
 
-           map.fitBounds(runLayer.getBounds());
-       })
-       .addTo(map);
+       //    map.fitBounds(runLayer.getBounds());
+       //})
+       //.addTo(map);
 
        var iconLayer = L.mapbox.featureLayer()
       .setGeoJSON(geojson)
      .addTo(map);
-
-       var groceryLayer = L.mapbox.tileLayer('Grocery_Stores-3xni22')
-         .addTo(map);
 
 
       var myLayer = L.mapbox.featureLayer()
       .loadURL('https://raw.githubusercontent.com/albelka/garbage-data/gh-pages/garbage2.geojson')
       .on('ready', function () {
           myLayer.eachLayer(function (layer) {
-              layer.bindPopup(layer.feature.properties.COLL_DAY_N);
+              layer.bindPopup('<p>' + layer.feature.properties.COLL_DAY_N + '</p>');
           });
       })
-      .setGeoJSON(geojson)
      .addTo(map);
+
+      var newLayer = L.mapbox.featureLayer()
+    .loadURL('https://raw.githubusercontent.com/albelka/grocery-store-data/gh-pages/groceryStores.geojson')
+    .on('ready', function () {
+        newLayer.eachLayer(function (layer) {
+            layer.bindPopup('<p>' + layer.feature.properties.Name + '</p>');
+            console.log(layer.feature.properties.Name);
+        });
+    })
+    .addTo(map);
+
+
 </script>
 
 <footer>
