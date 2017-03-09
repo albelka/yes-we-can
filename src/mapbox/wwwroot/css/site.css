@@ -17,25 +17,7 @@ textarea {
     max-width: 280px;
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
-}
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"]
-{
-    width: 100%;
-}
-
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-  /* Hide captions */
-  .carousel-caption {
-    display: none
-  }
-}
 
 #map {
     height: 500px;
@@ -63,7 +45,7 @@ body {
     background-image: url("../images/can.png");
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: 800px;
+    background-size: 790px;
     background-position: center;
     background-color: black;
   
@@ -91,17 +73,20 @@ div.card {
     
 }
 
-div.card {
+div.about {
     margin: 5px;
     background-color: #262626;
     color: white;
     border: hidden;
-    padding: 5px;
-     box-shadow: 5px 5px 2px #888888;
-     width: 50%;
-    
+    padding: 50px;
+    box-shadow: 5px 5px 2px #888888;
+    width: 100%;
 }
 
 img.card-img-top {
     height: 50px;
+}
+
+img.mary {
+    width: 300px;
 }

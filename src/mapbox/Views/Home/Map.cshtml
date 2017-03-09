@@ -2,12 +2,16 @@
     ViewData["Title"] = "Map";
 }
 
+
+@using mapbox.Models
+@model mapbox.Models.EnvironmentVariables
+
 <br /><br />
 <h4>Click on a polygon to find the garbage night for that area.</h4>
 
 <div id='map'></div>
 <script>
-       L.mapbox.accessToken = 'pk.eyJ1IjoiYWxiZWxrYSIsImEiOiJjaXpwc2VlOWwwMHNtMzJvNDZreDMxMTgwIn0.GkWVE5JQRakQyQSoJFKp3A';
+    L.mapbox.accessToken = "@EnvironmentVariables.Key";
        var geojson = [
   {
       type: 'Feature',

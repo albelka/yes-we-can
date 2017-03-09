@@ -6,7 +6,7 @@
 
 
 ## Description
-This project was generated in VisualStudio utilizing the mapbox.js API with data from Civic Apps. A map is displayed with garbage collection areas.  A user can click on an area to find that area's garbage night. In addition BottleDrop locations are marked, as well as colleges and universities which typically produce a lot of bottles and cans. A messages section allows people to let canners know when they expect to have a lot of cans to pick up (for instance, after a party.)  
+This project was generated in VisualStudio utilizing the mapbox.js API with data from Civic Apps. A map is displayed with garbage collection areas.  A user can click on an area to find that area's garbage night. In addition BottleDrop locations are marked, as well as colleges and universities which typically produce a lot of bottles and cans. A messages section allows people to let canners know when they expect to have a lot of cans for pick up (for instance, after a party.)  
 
 ## Setup/Installation Requirements
 
@@ -24,16 +24,26 @@ create a class file in the Models folder and name it 'EnvironmentVariables.cs.'
 ```
 	public class EnvironmentVariables
     {
-       
+      public static string Key = "Your Access Token" 
     }
 ```
-Now you can run Portfolio in any modern browser.
+
+* In the console navigate to the Root namespace and run:
+
+```
+	dotnet ef database update
+```
+
+Now you can run **Yes, We Can!** in any modern browser.
 
 ## Technologies Used
 * C#
 * VisualStudio
-* ASP.Net
-* Github API
+* ASP.Net Core
+* MS SQL
+* Entity Framework Core
+* Mapbox.js API
+
 
 GPL
 
