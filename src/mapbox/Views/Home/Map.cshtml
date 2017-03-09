@@ -10,6 +10,8 @@
 <h4>Click on a polygon to find the garbage night for that area.</h4>
 
 <div id='map'></div>
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
+
 <script>
     L.mapbox.accessToken = "@EnvironmentVariables.Key";
        var geojson = [
@@ -136,7 +138,7 @@
           'marker-color': '#ffff00',
           'marker-size': 'small',
           'marker-symbol': 'star',
-          'title': "Reed College"
+          'title': "Reed College" 
 
       }
   },
@@ -176,18 +178,16 @@
       })
      .addTo(map);
 
+      
       var newLayer = L.mapbox.featureLayer()
-    .loadURL('https://raw.githubusercontent.com/albelka/grocery-store-data/gh-pages/groceryStores.geojson')
-    .on('ready', function () {
-        newLayer.eachLayer(function (layer) {
-            layer.bindPopup('<p>' + layer.feature.properties.Name + '</p>');
-            var color = {"marker-color": "#ffff00"};
-            layer.setIcon(L.mapbox.marker.icon({ 'marker-symbol': 'grocery', 'marker-color': '59245f' }));
-            console.log(layer.feature.properties);
-
-        });
-    })
-    .addTo(map);
+        .loadURL('https://raw.githubusercontent.com/albelka/grocery-store-data/gh-pages/groceryStores.geojson')
+        .on('ready', function () {
+            newLayer.eachLayer(function (layer) {
+                layer.bindPopup('<p>' + layer.feature.properties.Name + '</p>');
+                layer.setIcon(L.mapbox.marker.icon({ 'marker-symbol': 'grocery', 'marker-color': '59245f' }));
+            });
+        })
+        .addTo(map);
 
 
 </script>
