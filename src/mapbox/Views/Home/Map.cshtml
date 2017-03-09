@@ -20,7 +20,7 @@
           coordinates: [ -122.675665, 45.598891]
       },
       properties: {
-          'marker-color': '#ff0000',
+          'marker-color': '#fe9c74',
           'marker-size': 'large',
           'marker-symbol': 'city',
           'title': "BottleDrop Redemption Center"
@@ -34,7 +34,7 @@
            coordinates: [-122.719610, 45.549385]
        },
        properties: {
-           'marker-color': '#ff0000',
+           'marker-color': '#fe9c74',
            'marker-size': 'large',
            'marker-symbol': 'city',
            'title': "BottleDrop Redemption Center"
@@ -48,7 +48,7 @@
             coordinates: [-122.534903, 45.528534]
         },
         properties: {
-            'marker-color': '#ff0000',
+            'marker-color': '#fe9c74',
             'marker-size': 'large',
             'marker-symbol': 'city',
             'title': "BottleDrop Redemption Center"
@@ -62,7 +62,7 @@
              coordinates: [-122.424353, 45.538153]
          },
          properties: {
-             'marker-color': '#ff0000',
+             'marker-color': '#fe9c74',
              'marker-size': 'large',
              'marker-symbol': 'city',
              'title': "BottleDrop Redemption Center"
@@ -76,7 +76,7 @@
           coordinates: [-122.601508, 45.451034]
       },
       properties: {
-          'marker-color': '#ff0000',
+          'marker-color': '#fe9c74',
           'marker-size': 'large',
           'marker-symbol': 'city',
           'title': "BottleDrop Redemption Center"
@@ -90,7 +90,7 @@
           coordinates: [-122.418170, 45.498424]
       },
       properties: {
-          'marker-color': '#ff0000',
+          'marker-color': '#fe9c74',
           'marker-size': 'large',
           'marker-symbol': 'city',
           'title': "BottleDrop Redemption Center"
@@ -162,20 +162,6 @@
        var map = L.mapbox.map('map', 'mapbox.outdoors')
            .setView([45.54, -122.62], 11);
 
-       //var layer = L.mapbox.tileLayer('mapbox.outdoors-copy');
-       //layer.on('ready', function () {
-       //    console.log(layer.getJSON());
-       //    layer.addTo(map);
-       //});
-
-       //var runLayer = omnivore.kml('https://rawgit.com/albelka/grocery-data/gh-pages/grocery.kmz')
-       //.on('ready', function () {
-       //    console.log(runLayer.getBounds());
-
-       //    map.fitBounds(runLayer.getBounds());
-       //})
-       //.addTo(map);
-
        var iconLayer = L.mapbox.featureLayer()
       .setGeoJSON(geojson)
      .addTo(map);
@@ -195,7 +181,10 @@
     .on('ready', function () {
         newLayer.eachLayer(function (layer) {
             layer.bindPopup('<p>' + layer.feature.properties.Name + '</p>');
-            console.log(layer.feature.properties.Name);
+            var color = {"marker-color": "#ffff00"};
+            layer.setIcon(L.mapbox.marker.icon({ 'marker-symbol': 'grocery', 'marker-color': '59245f' }));
+            console.log(layer.feature.properties);
+
         });
     })
     .addTo(map);
