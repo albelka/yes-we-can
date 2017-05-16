@@ -66,7 +66,6 @@ div.card {
     margin: 5px;
     background-color: #262626;
     color: white;
-    border: hidden;
     padding: 5px;
      box-shadow: 5px 5px 2px #888888;
      width: 50%;
@@ -77,10 +76,10 @@ div.about {
     margin: 5px;
     background-color: #262626;
     color: white;
-    border: hidden;
     padding: 50px;
     box-shadow: 5px 5px 2px #888888;
     width: 100%;
+    border-radius: 10px;
 }
 
 img.card-img-top {
@@ -89,4 +88,8 @@ img.card-img-top {
 
 img.mary {
     width: 300px;
+    border-width: 10px;
+    border-color: lightgrey;
+    border-radius: 8px;
+    box-shadow: 5px 5px 2px #888888;
 }
