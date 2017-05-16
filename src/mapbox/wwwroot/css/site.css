@@ -87,9 +87,9 @@ img.card-img-top {
 }
 
 img.mary {
-    width: 300px;
-    border-width: 10px;
-    border-color: lightgrey;
-    border-radius: 8px;
-    box-shadow: 5px 5px 2px #888888;
+    width: 90%;
+    border-width: 8px;
+    border-color: darkorange;
+    border-radius: 5px;
+    box-shadow: 3px 3px 2px darkolivegreen;
 }
